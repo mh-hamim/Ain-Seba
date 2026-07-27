@@ -1,0 +1,14 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.git/
+.env
+docs/
+tests/
+data/raw/*.pdf
+data/processed/*.csv
+data/processed/*_cleaned.txt
+*.md
+!requirements.txt
