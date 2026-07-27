@@ -1,47 +1,64 @@
+# ==========================
+# Phase 1: Data Ingestion
+# ==========================
 
-# --- Phase 1: Data Ingestion ---
 # PDF Processing
-PyMuPDF==1.24.14          # PDF text extraction (import as fitz)
+PyMuPDF==1.24.14
 
 # Text Processing & NLP
-tiktoken==0.7.0           # Token counting (OpenAI tokenizer)
-regex==2024.9.11          # Advanced regex for Bangla text
-langdetect==1.0.9         # Language detection
+tiktoken==0.7.0
+regex==2026.7.19
+langdetect==1.0.9
 
 # Data Handling
-pandas==2.2.3             # Data inspection and CSV export
+pandas==2.2.3
 
 # Utilities
-python-dotenv==1.0.1      # Environment variable management
-tqdm==4.66.5              # Progress bars
-rich==13.9.4              # Beautiful terminal output
-click==8.1.7              # CLI interface
+python-dotenv==1.0.1
+tqdm==4.66.5
+rich==13.9.4
+click==8.1.7
 
 # Testing
-pytest==8.3.3             # Unit tests
+pytest==8.3.3
 
-# Vector Store & Retrieval ---
-# OpenAI Embeddings
-openai==1.58.1            # OpenAI API (text-embedding-3-small)
+# ==========================
+# Vector Store & Retrieval
+# ==========================
+
+openai==1.58.1
 
 chromadb==0.5.23
-sentence-transformers==3.3.1
-transformers==4.46.3
-tokenizers==0.20.3
+
+sentence-transformers==5.6.1
+transformers==5.14.1
+tokenizers==0.22.2
+
 torch==2.5.1
 
+pydantic==2.13.4
+pydantic_core==2.46.4
+safetensors==0.8.0
 
-# --- RAG Chain & LLM ---
+# ==========================
+# RAG Chain & LLM
+# ==========================
+
 langchain==0.3.13
-langchain-openai==0.2.14
 langchain-core==0.3.28
+langchain-openai==0.2.14
 
+# ==========================
+# FastAPI Backend
+# ==========================
 
-# ---  FastAPI Backend ---
 fastapi==0.115.6
 uvicorn[standard]==0.34.0
 httpx==0.28.1
 
-# --- Phase 6: Streamlit Frontend ---
+# ==========================
+# Streamlit Frontend
+# ==========================
+
 streamlit==1.41.1
 requests==2.32.3
