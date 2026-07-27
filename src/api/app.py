@@ -44,6 +44,7 @@ from src.config import (
     CORS_ORIGINS,
     API_RATE_LIMIT,
     API_RATE_WINDOW,
+    USE_RERANKER,
 )
 
 logging.basicConfig(
@@ -68,7 +69,7 @@ def _get_bilingual_chain():
     global _bilingual_chain
     if _bilingual_chain is None:
         from src.chain.builder import build_bilingual_chain
-        _bilingual_chain = build_bilingual_chain()
+        _bilingual_chain = build_bilingual_chain(use_reranker=USE_RERANKER)
     return _bilingual_chain
 
 
@@ -116,7 +117,10 @@ async def lifespan(app: FastAPI):
         try:
             chain = _get_bilingual_chain()
             count = chain.rag_chain.retriever.store.collection.count()
-            logger.info(f"Warm-up complete. Vector store holds {count} documents.")
+            logger.info(
+                f"Warm-up complete. Vector store holds {count} documents. "
+                f"Reranker: {'enabled' if USE_RERANKER else 'DISABLED'}."
+            )
             if count == 0:
                 logger.warning(
                     "Vector store is EMPTY. Run: "

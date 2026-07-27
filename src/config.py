@@ -44,6 +44,14 @@ RETRIEVAL_TOP_K = int(os.getenv("RETRIEVAL_TOP_K", 10))
 RERANK_TOP_N = int(os.getenv("RERANK_TOP_N", 5))
 RERANKER_MODEL = os.getenv("RERANKER_MODEL", "cross-encoder/ms-marco-MiniLM-L-6-v2")
 
+# Load the cross-encoder reranker at all. Keep this true locally: reranking
+# measurably improves ordering (it scored Labour Act s.100 at 3.381 while
+# pushing a superficially similar adolescent-hours clause to -1.219).
+# Set false on memory-capped hosts -- torch plus the model needs well over the
+# 512MB that free-tier PaaS instances provide. Retrieval then falls back to
+# pure vector similarity.
+USE_RERANKER = os.getenv("USE_RERANKER", "true").strip().lower() in ("1", "true", "yes", "on")
+
 # ============================================
 # Phase 3: RAG Chain & LLM Configuration
 # ============================================
