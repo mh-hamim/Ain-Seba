@@ -3,10 +3,11 @@ AinSeba - RAG Chain
 Connects the retrieval pipeline to GPT-4o-mini for citation-grounded legal answers.
 
 Uses LangChain's LCEL (LangChain Expression Language) for a clean,
-composable pipeline: Query -> Retrieve -> Format -> LLM -> Parse.
+composable pipeline: Query -> Condense -> Retrieve -> Format -> LLM -> Parse.
 """
 
 import logging
+import re
 from dataclasses import dataclass, field
 from typing import Optional, Generator
 
@@ -25,6 +26,29 @@ logger = logging.getLogger(__name__)
 
 
 # ============================================
+# Follow-up Condensation
+# ============================================
+
+CONDENSE_PROMPT = """\
+Rewrite the user's follow-up question as a standalone question that can be \
+understood without the conversation history. Resolve every pronoun and \
+reference ("that", "it", "those sections") using the history.
+
+Rules:
+- Output ONLY the rewritten question. No preamble, no explanation, no quotes.
+- Keep it in English.
+- Preserve the user's intent exactly. Do not answer the question.
+- If the question already stands alone, return it unchanged.
+
+Conversation history:
+{history}
+
+Follow-up question: {question}
+
+Standalone question:"""
+
+
+# ============================================
 # Response Data Model
 # ============================================
 
@@ -37,6 +61,7 @@ class RAGResponse:
     retrieval_count: int = 0
     model: str = ""
     session_id: str = "default"
+    search_query: str = ""  # what was actually sent to the retriever
 
     def format_sources(self) -> str:
         """Format sources as a readable string."""
@@ -57,6 +82,7 @@ class RAGResponse:
             "retrieval_count": self.retrieval_count,
             "model": self.model,
             "session_id": self.session_id,
+            "search_query": self.search_query,
         }
 
 
@@ -67,22 +93,31 @@ class RAGResponse:
 class LegalRAGChain:
     """
     Full RAG chain for AinSeba legal assistant.
-    
+
     Pipeline:
     1. Take user question
-    2. Retrieve relevant legal context (via LegalRetriever from Phase 2)
-    3. Format prompt with context + conversation history
-    4. Send to GPT-4o-mini
-    5. Parse and return structured response with source tracking
-    6. Update conversation memory
-    
+    2. Condense follow-ups into standalone search queries
+    3. Retrieve relevant legal context (via LegalRetriever from Phase 2)
+    4. Format prompt with context + conversation history
+    5. Send to GPT-4o-mini
+    6. Parse and return structured response with source tracking
+    7. Update conversation memory
+
     Features:
     - Citation-grounded answers with section references
     - Conversation memory for follow-up questions (sliding window, k=5)
+    - History-aware retrieval so follow-ups actually find their subject
     - Streaming support for real-time responses
     - Source document tracking
     - Graceful handling of out-of-scope questions
     """
+
+    # Words that make a question dependent on what came before it.
+    _ANAPHORIC = re.compile(
+        r"\b(that|this|those|these|it|its|there|then|same|above|previous|"
+        r"former|latter|he|she|they|them|his|her|their|such)\b",
+        re.IGNORECASE,
+    )
 
     def __init__(
         self,
@@ -92,6 +127,7 @@ class LegalRAGChain:
         temperature: float = 0.1,
         max_tokens: int = 1500,
         memory_k: int = 5,
+        condense_followups: bool = True,
     ):
         """
         Args:
@@ -101,10 +137,12 @@ class LegalRAGChain:
             temperature: LLM temperature (low = more factual).
             max_tokens: Maximum response tokens.
             memory_k: Number of conversation exchanges to remember.
+            condense_followups: Rewrite follow-up questions before retrieving.
         """
         self.retriever = retriever
         self.memory = ConversationMemory(k=memory_k)
         self.model_name = model
+        self.condense_followups = condense_followups
 
         # Initialize LangChain LLM
         self.llm = ChatOpenAI(
@@ -114,12 +152,90 @@ class LegalRAGChain:
             api_key=api_key,
         )
 
+        # Small, cheap model call for query rewriting. Low ceiling on output
+        # because a rewritten question is one line.
+        self.condenser = ChatOpenAI(
+            model=model,
+            temperature=0.0,
+            max_tokens=120,
+            api_key=api_key,
+        )
+
         # Output parser
         self.parser = StrOutputParser()
+
+        # Retrieval behind the most recent stream() call. query() returns its
+        # sources inside RAGResponse, but stream() only yields tokens, so the
+        # API has no other way to emit citations once the stream finishes.
+        self.last_sources: list[dict] = []
 
         logger.info(
             f"RAG chain initialized (model={model}, temp={temperature}, memory_k={memory_k})"
         )
+
+    # ----------------------------------------
+    # Follow-up handling
+    # ----------------------------------------
+
+    def _is_followup(self, question: str, chat_history: list[dict]) -> bool:
+        """
+        Decide whether a question depends on the conversation to make sense.
+
+        "What section covers that?" retrieves nothing useful on its own -- the
+        embedding carries no legal subject at all -- so the model correctly
+        reports that it has no information. Detecting these before retrieval is
+        what makes multi-turn conversation work.
+        """
+        if not chat_history:
+            return False
+
+        words = question.split()
+        if len(words) <= 4:
+            return True
+        return len(words) <= 15 and bool(self._ANAPHORIC.search(question))
+
+    def _condense(self, question: str, chat_history: list[dict]) -> str:
+        """
+        Rewrite a follow-up into a standalone retrieval query.
+
+        Falls back to concatenating the previous user turn, which costs nothing
+        and still puts the missing subject into the embedding.
+        """
+        recent = chat_history[-4:]
+        history_text = "\n".join(
+            f"{m['role'].capitalize()}: {m['content'][:400]}" for m in recent
+        )
+
+        try:
+            rewritten = (self.condenser | self.parser).invoke([
+                HumanMessage(content=CONDENSE_PROMPT.format(
+                    history=history_text,
+                    question=question,
+                ))
+            ]).strip().strip('"')
+
+            if rewritten and len(rewritten) > 3:
+                logger.info(f"  Condensed follow-up -> '{rewritten[:100]}'")
+                return rewritten
+
+        except Exception as e:
+            logger.warning(f"  Condensation failed ({e}); falling back to concatenation")
+
+        last_user = next(
+            (m["content"] for m in reversed(chat_history) if m["role"] == "user"),
+            "",
+        )
+        return f"{last_user} {question}".strip() if last_user else question
+
+    def _search_query(self, question: str, chat_history: list[dict]) -> str:
+        """Resolve the text that should actually be embedded for retrieval."""
+        if self.condense_followups and self._is_followup(question, chat_history):
+            return self._condense(question, chat_history)
+        return question
+
+    # ----------------------------------------
+    # Main entry points
+    # ----------------------------------------
 
     def query(
         self,
@@ -146,19 +262,21 @@ class LegalRAGChain:
 
         logger.info(f"Processing query: '{question[:80]}...'")
 
-        # Step 1: Retrieve relevant context
+        # Step 1: Get conversation history, then resolve the retrieval query
+        chat_history = self.memory.get_history(session_id)
+        search_query = self._search_query(question, chat_history)
+
+        # Step 2: Retrieve relevant context
         retrieval_results = self.retriever.retrieve(
-            query=question,
+            query=search_query,
             act_id=act_id,
             category=category,
             use_reranker=use_reranker,
         )
         logger.info(f"  Retrieved {len(retrieval_results)} relevant chunks")
 
-        # Step 2: Get conversation history
-        chat_history = self.memory.get_history(session_id)
-
-        # Step 3: Build prompt
+        # Step 3: Build prompt. The user still sees their original wording; only
+        # retrieval uses the rewritten form.
         user_prompt = build_user_prompt(
             question=question,
             retrieval_results=retrieval_results,
@@ -198,6 +316,8 @@ class LegalRAGChain:
             session_id=session_id,
         )
 
+        self.last_sources = sources
+
         response = RAGResponse(
             answer=answer,
             sources=sources,
@@ -205,6 +325,7 @@ class LegalRAGChain:
             retrieval_count=len(retrieval_results),
             model=self.model_name,
             session_id=session_id,
+            search_query=search_query,
         )
 
         logger.info(f"  Response generated ({len(answer)} chars, {len(sources)} sources)")
@@ -226,20 +347,25 @@ class LegalRAGChain:
             Individual text chunks as they arrive.
 
         Returns:
-            Final RAGResponse (accessible after generator completes).
+            Final RAGResponse, available as the generator's return value and
+            also mirrored on self.last_sources for callers that only iterate.
         """
         session_id = session_id or "default"
 
+        # Resolve the retrieval query the same way query() does, so streaming
+        # and non-streaming answers stay consistent on follow-ups.
+        chat_history = self.memory.get_history(session_id)
+        search_query = self._search_query(question, chat_history)
+
         # Retrieve context
         retrieval_results = self.retriever.retrieve(
-            query=question,
+            query=search_query,
             act_id=act_id,
             category=category,
             use_reranker=use_reranker,
         )
 
         # Build prompt
-        chat_history = self.memory.get_history(session_id)
         user_prompt = build_user_prompt(
             question=question,
             retrieval_results=retrieval_results,
@@ -281,6 +407,24 @@ class LegalRAGChain:
             sources=[s["citation"] for s in sources],
             session_id=session_id,
         )
+
+        # Expose the retrieval behind this stream so the API can emit citations
+        # once the tokens have finished.
+        self.last_sources = sources
+
+        return RAGResponse(
+            answer=full_answer,
+            sources=sources,
+            query=question,
+            retrieval_count=len(retrieval_results),
+            model=self.model_name,
+            session_id=session_id,
+            search_query=search_query,
+        )
+
+    # ----------------------------------------
+    # Session helpers
+    # ----------------------------------------
 
     def get_conversation_history(
         self, session_id: Optional[str] = None
