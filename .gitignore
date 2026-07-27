@@ -41,3 +41,19 @@ logs/
 
 # Jupyter
 .ipynb_checkpoints/
+
+
+!chroma_db/
+!chroma_db/**
+# ad-hoc debug scripts
+check_embed.py
+check_extract.py
+inspect_chunks.py
+purge_toc.py
+
+# local-only guides
+DEPLOY.md
+docs/images/SHOTLIST.md
+
+# HF Space card — pushed to the space remote only
+space/
