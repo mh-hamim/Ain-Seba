@@ -1,5 +1,5 @@
 {
-  "run_date": "2026-02-27T04:24:37.401558",
+  "run_date": "2026-07-26T17:21:47.732040",
   "total_laws": 10,
   "processed": [
     {
@@ -10,11 +10,11 @@
       "pages_extracted": 145,
       "chars_raw": 421636,
       "chars_cleaned": 398246,
-      "total_chunks": 1,
-      "total_tokens": 575,
-      "avg_tokens_per_chunk": 575.0,
-      "quality_score": 100.0,
-      "quality_grade": "A - Excellent",
+      "total_chunks": 377,
+      "total_tokens": 77392,
+      "avg_tokens_per_chunk": 205.3,
+      "quality_score": 85.6,
+      "quality_grade": "B - Good",
       "output_files": {
         "json": "D:\\project\\ainseba\\data\\processed\\labour_act_2006_chunks.json",
         "csv": "D:\\project\\ainseba\\data\\processed\\labour_act_2006_chunks.csv",
@@ -30,11 +30,11 @@
       "pages_extracted": 223,
       "chars_raw": 554192,
       "chars_cleaned": 433455,
-      "total_chunks": 126,
-      "total_tokens": 81812,
-      "avg_tokens_per_chunk": 649.3,
-      "quality_score": 98.6,
-      "quality_grade": "A - Excellent",
+      "total_chunks": 526,
+      "total_tokens": 90679,
+      "avg_tokens_per_chunk": 172.4,
+      "quality_score": 82.2,
+      "quality_grade": "B - Good",
       "output_files": {
         "json": "D:\\project\\ainseba\\data\\processed\\penal_code_1860_chunks.json",
         "csv": "D:\\project\\ainseba\\data\\processed\\penal_code_1860_chunks.csv",
@@ -50,11 +50,11 @@
       "pages_extracted": 9,
       "chars_raw": 20472,
       "chars_cleaned": 16758,
-      "total_chunks": 9,
-      "total_tokens": 4528,
-      "avg_tokens_per_chunk": 503.1,
-      "quality_score": 40.0,
-      "quality_grade": "F - Poor",
+      "total_chunks": 12,
+      "total_tokens": 4001,
+      "avg_tokens_per_chunk": 333.4,
+      "quality_score": 93.3,
+      "quality_grade": "A - Excellent",
       "output_files": {
         "json": "D:\\project\\ainseba\\data\\processed\\muslim_family_law_1961_chunks.json",
         "csv": "D:\\project\\ainseba\\data\\processed\\muslim_family_law_1961_chunks.csv",
@@ -70,11 +70,11 @@
       "pages_extracted": 14,
       "chars_raw": 36801,
       "chars_cleaned": 30879,
-      "total_chunks": 13,
-      "total_tokens": 7109,
-      "avg_tokens_per_chunk": 546.8,
-      "quality_score": 40.0,
-      "quality_grade": "F - Poor",
+      "total_chunks": 21,
+      "total_tokens": 6342,
+      "avg_tokens_per_chunk": 302.0,
+      "quality_score": 90.5,
+      "quality_grade": "A - Excellent",
       "output_files": {
         "json": "D:\\project\\ainseba\\data\\processed\\environment_act_1995_chunks.json",
         "csv": "D:\\project\\ainseba\\data\\processed\\environment_act_1995_chunks.csv",
@@ -90,10 +90,10 @@
       "pages_extracted": 158,
       "chars_raw": 411432,
       "chars_cleaned": 333517,
-      "total_chunks": 70,
-      "total_tokens": 59309,
-      "avg_tokens_per_chunk": 847.3,
-      "quality_score": 98.0,
+      "total_chunks": 230,
+      "total_tokens": 69297,
+      "avg_tokens_per_chunk": 301.3,
+      "quality_score": 92.7,
       "quality_grade": "A - Excellent",
       "output_files": {
         "json": "D:\\project\\ainseba\\data\\processed\\tenancy_act_1950_chunks.json",
@@ -132,17 +132,17 @@
   ],
   "failed": [],
   "combined_quality": {
-    "score": 85.5,
+    "score": 85.7,
     "grade": "B - Good",
     "improvement_suggestions": [
-      "24 quality issues found (11% of chunks)"
+      "Only 67.2% chunks in target token range"
     ]
   },
   "summary": {
     "processed_count": 5,
     "skipped_count": 5,
     "failed_count": 0,
-    "total_chunks": 219,
-    "total_tokens": 153333
+    "total_chunks": 1166,
+    "total_tokens": 247711
   }
 }

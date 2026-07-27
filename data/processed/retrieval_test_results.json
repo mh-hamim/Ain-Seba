@@ -1,8 +1,8 @@
 {
-  "test_date": "2026-02-24T01:03:56.958787",
+  "test_date": "2026-06-18T22:23:39.413566",
   "total_queries": 15,
-  "passed": 3,
-  "pass_rate": 20.0,
+  "passed": 1,
+  "pass_rate": 6.7,
   "results": [
     {
       "query_index": 1,
@@ -14,27 +14,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.6306,
-          "rerank_score": 4.362232208251953,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "penal_code_1860_ffb1f2e750ad",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 2, (2 The word \"imprisonment\" was substituted, for the word \"transportation\" by the)",
+          "similarity": 0.1475,
+          "rerank_score": -10.868321418762207,
+          "text_preview": "servant, or in consequence of anything done or attempted to be done by that person in the lawful discharge of his duty as such public servant, shall be punished with imprisonment of either description"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_348c0151a2cc",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 3, (Terms of employment)",
-          "similarity": 0.2445,
-          "rerank_score": -10.156631469726562,
-          "text_preview": "Section 3. Terms of employment\n(1) Every employer shall, within thirty days of the employment of a worker, provide the worker with a written contract of employment.\n(2) The contract of employment shal"
+          "chunk_id": "penal_code_1860_a80074a46dcf",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 15, (1860: Act XLV] Penal Code 112)",
+          "similarity": 0.1683,
+          "rerank_score": -10.882308959960938,
+          "text_preview": "278. However voluntarily vitiates the atmosphere in any Making\n atmosphereplace so as to make it noxious to the health of persons in general noxious to dwelling or carrying on business in the neighbor"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_7c4867b40623",
-          "citation": "Sample Workers Protection Act 2024, Chapter V: WORKPLACE SAFETY, Section 12, (Cleanliness)",
-          "similarity": 0.2094,
-          "rerank_score": -10.910346031188965,
-          "text_preview": "Section 12. Cleanliness\n(1) Every establishment shall be kept clean and free from effluvia arising from any drain, privy or other nuisance.\n(2) The floors of every workroom shall be cleaned at least o"
+          "chunk_id": "penal_code_1860_a9ac360efd6f",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.1593,
+          "rerank_score": -10.985401153564453,
+          "text_preview": "extend to one month or with fine which may extend to two hundred taka, or with both. 1 The words \"three years\" were substituted, for the words \"two years\" by the Penal\nCode (Amendment) Ordinance, 1982"
         }
       ],
       "passed": false
@@ -49,30 +49,30 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_8f2d1f4c6bef",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 15, (Penalties for violations)",
-          "similarity": 0.4135,
-          "rerank_score": -1.7393368482589722,
-          "text_preview": "Section 15. Penalties for violations\n(1) Whoever contravenes any provision of this Act or any rule made thereunder shall be punishable with imprisonment for a term which may extend to one year, or wit"
+          "chunk_id": "penal_code_1860_34bdc503ab36",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.4989,
+          "rerank_score": 3.4537179470062256,
+          "text_preview": "may extend to ten years, shall be punished with imprisonment of either description for a term which may extend to ten years, and shall also be liable to fine; and, if the offence be punishable under S"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_9736bc975f28",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 16, (Powers of Inspectors)",
-          "similarity": 0.1838,
-          "rerank_score": -10.898170471191406,
-          "text_preview": "Section 16. Powers of Inspectors\n(1) An Inspector may, for the purpose of carrying out the provisions of this Act:\n(a) enter any premises which is used as an establishment;\n(b) examine any person foun"
+          "chunk_id": "penal_code_1860_12ca17ef7f5e",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.5713,
+          "rerank_score": 3.318235397338867,
+          "text_preview": "But, if such property subsequently\n comes into the possession of a person legally entitled to the\n possession thereof, it then ceases to be stolen property. Dishonestly 411. Whoever dishonestly receiv"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_ffa5969e779a",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 17, (Complaints and proceedings)",
-          "similarity": 0.1839,
-          "rerank_score": -11.066410064697266,
-          "text_preview": "Section 17. Complaints and proceedings\n(1) Any worker may present a complaint to the Inspector if the employer fails to comply with any provision of this\nAct.\n(2) The Inspector shall, within thirty da"
+          "chunk_id": "penal_code_1860_d0bdd7f32b8c",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.6061,
+          "rerank_score": 3.099764823913574,
+          "text_preview": "imprisonment of either description for a term which may extend\n to three years, or with fine, or with both. Theft in 380. Whoever commits theft in any building, tent or vessel, dwelling house, which b"
         }
       ],
-      "passed": false
+      "passed": true
     },
     {
       "query_index": 3,
@@ -84,27 +84,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_7c4867b40623",
-          "citation": "Sample Workers Protection Act 2024, Chapter V: WORKPLACE SAFETY, Section 12, (Cleanliness)",
-          "similarity": 0.18,
-          "rerank_score": -10.983152389526367,
-          "text_preview": "Section 12. Cleanliness\n(1) Every establishment shall be kept clean and free from effluvia arising from any drain, privy or other nuisance.\n(2) The floors of every workroom shall be cleaned at least o"
+          "chunk_id": "penal_code_1860_84baa3729ef2",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 15, (1860: Act XLV] Penal Code 112)",
+          "similarity": 0.2813,
+          "rerank_score": -8.383636474609375,
+          "text_preview": "A person is guilty of a public nuisance who does any Public\n nuisance.act or is guilty of an illegal omission which causes any common injury, danger or annoyance to the public or to the people in gene"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_8f2d1f4c6bef",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 15, (Penalties for violations)",
-          "similarity": 0.2357,
-          "rerank_score": -11.013042449951172,
-          "text_preview": "Section 15. Penalties for violations\n(1) Whoever contravenes any provision of this Act or any rule made thereunder shall be punishable with imprisonment for a term which may extend to one year, or wit"
+          "chunk_id": "penal_code_1860_e6cca744f81f",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.2625,
+          "rerank_score": -9.902003288269043,
+          "text_preview": "a term which may extend to one year, or with fine, or with both. 483. Whoever counterfeits any trade mark or property mark Counterfeiting\n\n1860: Act XLV] Penal Code 207\n\nused by any other person shall"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_2dd6a0bac055",
-          "citation": "Sample Workers Protection Act 2024, Section preamble, (Preamble / Preliminary)",
-          "similarity": 0.194,
-          "rerank_score": -11.15426254272461,
-          "text_preview": "Sample Workers Protection Act, 2024 ? Page 1\n\nTHE SAMPLE WORKERS PROTECTION ACT, 2024\n\nAn Act to provide for the protection of workers' rights and welfare in the People's Republic of Bangladesh.\n\nWher"
+          "chunk_id": "penal_code_1860_b419875aff71",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 15, (1860: Act XLV] Penal Code 112)",
+          "similarity": 0.2546,
+          "rerank_score": -9.986284255981445,
+          "text_preview": "286. Whoever does, with any explosive substance, any act Negligent\n conduct withso rashly or negligently as to endanger human life, or to be respect to likely to cause hurt or injury to any other pers"
         }
       ],
       "passed": false
@@ -119,27 +119,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_8f2d1f4c6bef",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 15, (Penalties for violations)",
-          "similarity": 0.4776,
-          "rerank_score": -5.408689498901367,
-          "text_preview": "Section 15. Penalties for violations\n(1) Whoever contravenes any provision of this Act or any rule made thereunder shall be punishable with imprisonment for a term which may extend to one year, or wit"
+          "chunk_id": "penal_code_1860_2bd6db1eddca",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.4637,
+          "rerank_score": -5.02951717376709,
+          "text_preview": "annoyance to any person, shall be punished with simple imprisonment for a term which may extend to twenty-four hours, or with fine which may extend to ten taka, or with both. 1860: Act XLV] Penal Code"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_4db0510ce2a7",
-          "citation": "Sample Workers Protection Act 2024, Chapter I: INTRODUCTION AND DEFINITIONS, Section 2, (Definitions)",
-          "similarity": 0.1826,
-          "rerank_score": -11.186671257019043,
-          "text_preview": "Section 2. Definitions\nIn this Act, unless there is anything repugnant in the subject or context,\n\n(b) \"employer\" means any person who employs, whether directly or through another person, or whether o"
+          "chunk_id": "penal_code_1860_d0bdd7f32b8c",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.4766,
+          "rerank_score": -5.087195873260498,
+          "text_preview": "imprisonment of either description for a term which may extend\n to three years, or with fine, or with both. Theft in 380. Whoever commits theft in any building, tent or vessel, dwelling house, which b"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_9736bc975f28",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 16, (Powers of Inspectors)",
-          "similarity": 0.1486,
-          "rerank_score": -11.19074535369873,
-          "text_preview": "Section 16. Powers of Inspectors\n(1) An Inspector may, for the purpose of carrying out the provisions of this Act:\n(a) enter any premises which is used as an establishment;\n(b) examine any person foun"
+          "chunk_id": "penal_code_1860_c35df1013c2d",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.4804,
+          "rerank_score": -5.385468482971191,
+          "text_preview": "1 The word \"imprisonment\" was substituted, for the word \"transportation\" by the\nPenal Code (Amendment) Ordinance, 1985 (Ordinance No. XLI of 1985), Section 21.\n\n1860: Act XLV] Penal Code 205\n\npossessi"
         }
       ],
       "passed": false
@@ -154,27 +154,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_348c0151a2cc",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 3, (Terms of employment)",
-          "similarity": 0.3538,
-          "rerank_score": -6.7120256423950195,
-          "text_preview": "Section 3. Terms of employment\n(1) Every employer shall, within thirty days of the employment of a worker, provide the worker with a written contract of employment.\n(2) The contract of employment shal"
+          "chunk_id": "tenancy_act_1950_19af4977ceb4",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.2713,
+          "rerank_score": -8.52308464050293,
+          "text_preview": "68D. (1) Any such rent-receiver may apply to the Collector Option to have\n arrears collectedthat he desires to have such arrears and interest, which are not\n through barred by limitation, to be recove"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.2573,
-          "rerank_score": -8.175223350524902,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "tenancy_act_1950_d93eb5919ea9",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.2346,
+          "rerank_score": -9.304344177246094,
+          "text_preview": "(2) Instead of proceeding under sub-section (1), the\nGovernment may pay, at such time and in such manner as may be prescribed to an outgoing rent-receiver, in lieu of the compensation payable under th"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_ffa5969e779a",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 17, (Complaints and proceedings)",
-          "similarity": 0.3514,
-          "rerank_score": -8.757661819458008,
-          "text_preview": "Section 17. Complaints and proceedings\n(1) Any worker may present a complaint to the Inspector if the employer fails to comply with any provision of this\nAct.\n(2) The Inspector shall, within thirty da"
+          "chunk_id": "tenancy_act_1950_367495498ea3",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.2418,
+          "rerank_score": -9.409891128540039,
+          "text_preview": "244 State Acquisition and Tenancy Act, 1950\n\n(3) In all cases of moneys, bonds and other securities\n deposited to which this section applies, the Collector of the\n district shall order the costs of th"
         }
       ],
       "passed": false
@@ -189,27 +189,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_d299754f640a",
-          "citation": "Sample Workers Protection Act 2024, Chapter V: WORKPLACE SAFETY, Section 14, (Safety of buildings and machinery)",
-          "similarity": 0.2623,
-          "rerank_score": -10.419167518615723,
-          "text_preview": "Section 14. Safety of buildings and machinery\n(1) If it appears to the Inspector that any building or part of a building used as an establishment is in such a condition that it is dangerous to human l"
+          "chunk_id": "tenancy_act_1950_a8bb93ea4cd9",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 39, (92. (1) The interest of a raiyat in a holding shall be Extinguishment)",
+          "similarity": 0.3717,
+          "rerank_score": -8.149479866027832,
+          "text_preview": "(5) If the mortgagee does not restore possession of the\n mortgaged land to the mortgagor by the date fixed under sub-\n section (4), the Sub-divisional Magistrate 3[or any Officer\n authorised in this b"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_8f2d1f4c6bef",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 15, (Penalties for violations)",
-          "similarity": 0.1809,
-          "rerank_score": -11.13163948059082,
-          "text_preview": "Section 15. Penalties for violations\n(1) Whoever contravenes any provision of this Act or any rule made thereunder shall be punishable with imprisonment for a term which may extend to one year, or wit"
+          "chunk_id": "tenancy_act_1950_500c761ae595",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 39, (92. (1) The interest of a raiyat in a holding shall be Extinguishment)",
+          "similarity": 0.342,
+          "rerank_score": -8.362268447875977,
+          "text_preview": "Section 39.\n\n92. (1) The interest of a raiyat in a holding shall be Extinguishment\n of interest ofextinguished-\n raiyats in\n certain cases\n (a) when he dies intestate leaving no heir entitled to inher"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_ffa5969e779a",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 17, (Complaints and proceedings)",
-          "similarity": 0.2552,
-          "rerank_score": -11.136983871459961,
-          "text_preview": "Section 17. Complaints and proceedings\n(1) Any worker may present a complaint to the Inspector if the employer fails to comply with any provision of this\nAct.\n(2) The Inspector shall, within thirty da"
+          "chunk_id": "tenancy_act_1950_d92fa010447c",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.3477,
+          "rerank_score": -9.253437042236328,
+          "text_preview": "Power to 74. (1) Subject to rules made under this Act, a Revenuecompel officer may, for the purposes of this Act, by notice require anyproduction of statements and person to make and deliver to him a "
         }
       ],
       "passed": false
@@ -224,27 +224,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_2dd6a0bac055",
-          "citation": "Sample Workers Protection Act 2024, Section preamble, (Preamble / Preliminary)",
-          "similarity": 0.2076,
-          "rerank_score": -10.580364227294922,
-          "text_preview": "Sample Workers Protection Act, 2024 ? Page 1\n\nTHE SAMPLE WORKERS PROTECTION ACT, 2024\n\nAn Act to provide for the protection of workers' rights and welfare in the People's Republic of Bangladesh.\n\nWher"
+          "chunk_id": "penal_code_1860_77fb4253b636",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.3268,
+          "rerank_score": -6.764073371887207,
+          "text_preview": "stolen property, shall be punished with imprisonment of either\n description for a term which may extend to three years, or with\n fine, or with both. 1 The word \"imprisonment\" was substituted, for the "
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_8f2d1f4c6bef",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 15, (Penalties for violations)",
-          "similarity": 0.2263,
-          "rerank_score": -10.870194435119629,
-          "text_preview": "Section 15. Penalties for violations\n(1) Whoever contravenes any provision of this Act or any rule made thereunder shall be punishable with imprisonment for a term which may extend to one year, or wit"
+          "chunk_id": "penal_code_1860_d0bdd7f32b8c",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.324,
+          "rerank_score": -7.188474655151367,
+          "text_preview": "imprisonment of either description for a term which may extend\n to three years, or with fine, or with both. Theft in 380. Whoever commits theft in any building, tent or vessel, dwelling house, which b"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_d4151f9cbdad",
-          "citation": "Sample Workers Protection Act 2024, Chapter I: INTRODUCTION AND DEFINITIONS, Section 1, (Short title, extent and commencement)",
-          "similarity": 0.1457,
-          "rerank_score": -11.05762004852295,
-          "text_preview": "Section 1. Short title, extent and commencement\n(1) This Act may be called the Sample Workers Protection Act, 2024.\n(2) It extends to the whole of Bangladesh.\n(3) It shall come into force on such date"
+          "chunk_id": "penal_code_1860_d77b300154a0",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.3363,
+          "rerank_score": -7.863117218017578,
+          "text_preview": "Cheating by 416. A person is said to \"cheat by personation\" if he cheats personation. by pretending to be some other person, or by knowingly\n substituting one person for another, or representing that "
         }
       ],
       "passed": false
@@ -259,27 +259,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_348c0151a2cc",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 3, (Terms of employment)",
-          "similarity": 0.4355,
-          "rerank_score": -4.944800853729248,
-          "text_preview": "Section 3. Terms of employment\n(1) Every employer shall, within thirty days of the employment of a worker, provide the worker with a written contract of employment.\n(2) The contract of employment shal"
+          "chunk_id": "tenancy_act_1950_367495498ea3",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.2854,
+          "rerank_score": -9.21313762664795,
+          "text_preview": "244 State Acquisition and Tenancy Act, 1950\n\n(3) In all cases of moneys, bonds and other securities\n deposited to which this section applies, the Collector of the\n district shall order the costs of th"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_4db0510ce2a7",
-          "citation": "Sample Workers Protection Act 2024, Chapter I: INTRODUCTION AND DEFINITIONS, Section 2, (Definitions)",
-          "similarity": 0.3469,
-          "rerank_score": -9.203700065612793,
-          "text_preview": "Section 2. Definitions\nIn this Act, unless there is anything repugnant in the subject or context,\n\n(b) \"employer\" means any person who employs, whether directly or through another person, or whether o"
+          "chunk_id": "tenancy_act_1950_c9191ed577ae",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.2801,
+          "rerank_score": -9.290153503417969,
+          "text_preview": "(3) When any amount is deducted under sub-section (2)\nfrom the amount of any compensation payable to a rent-receiver under a Compensation Assessment-roll for the acquisition of his rent-receiving inte"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.3614,
-          "rerank_score": -9.317829132080078,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "tenancy_act_1950_b893541abc5c",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 90, (Provided further that in making settlement of any cultivable land preference shall be given to an applicant for settlement who cultivates land by himself or by the members of his family and holds a quantity of cultivable land which, added to the quantity of cultivable land, if any, held by the other members of his family, is less than three acres.)",
+          "similarity": 0.2971,
+          "rerank_score": -9.85441780090332,
+          "text_preview": "(zb) the Revenue Authority to whom appeals under Section 41 are to be preferred and disposal of appeals under that\n section;\n\n(zc) the manner of publication of a Compensation\n Assessment-roll under Se"
         }
       ],
       "passed": false
@@ -294,27 +294,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_8f2d1f4c6bef",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 15, (Penalties for violations)",
-          "similarity": 0.508,
-          "rerank_score": 1.8641612529754639,
-          "text_preview": "Section 15. Penalties for violations\n(1) Whoever contravenes any provision of this Act or any rule made thereunder shall be punishable with imprisonment for a term which may extend to one year, or wit"
+          "chunk_id": "penal_code_1860_95b5ea5c1477",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.378,
+          "rerank_score": -4.943238735198975,
+          "text_preview": "imprisonment of either description for a term which may extend\n to ten years, and shall also be liable to fine. Punishment for 456. Whoever commits lurking house-trespass by night, or lurking house- h"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_ffa5969e779a",
-          "citation": "Sample Workers Protection Act 2024, Chapter VI: PENALTIES AND ENFORCEMENT, Section 17, (Complaints and proceedings)",
-          "similarity": 0.4141,
-          "rerank_score": -7.054225921630859,
-          "text_preview": "Section 17. Complaints and proceedings\n(1) Any worker may present a complaint to the Inspector if the employer fails to comply with any provision of this\nAct.\n(2) The Inspector shall, within thirty da"
+          "chunk_id": "penal_code_1860_7819f5ac99fd",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 15, (1860: Act XLV] Penal Code 112)",
+          "similarity": 0.394,
+          "rerank_score": -4.952719211578369,
+          "text_preview": "X of 1982), Section 3(a). 2 The explanation was added by the Penal Code (Amendment) Ordinance, 1982\n(Ordinance No. X of 1982), Section 3(b). 1860: Act XLV] Penal Code 137\n\n283. Whoever, by doing any a"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_d299754f640a",
-          "citation": "Sample Workers Protection Act 2024, Chapter V: WORKPLACE SAFETY, Section 14, (Safety of buildings and machinery)",
-          "similarity": 0.3897,
-          "rerank_score": -7.985281944274902,
-          "text_preview": "Section 14. Safety of buildings and machinery\n(1) If it appears to the Inspector that any building or part of a building used as an establishment is in such a condition that it is dangerous to human l"
+          "chunk_id": "penal_code_1860_0da2c0900c95",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.3792,
+          "rerank_score": -5.209165573120117,
+          "text_preview": "1 The word \"imprisonment\" was substituted, for the word \"transportation\" by the\nPenal Code (Amendment) Ordinance, 1985 (Ordinance No. XLI of 1985), Section 21.\n\n1860: Act XLV] Penal Code 197\n\nDishones"
         }
       ],
       "passed": false
@@ -329,27 +329,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_348c0151a2cc",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 3, (Terms of employment)",
-          "similarity": 0.2844,
-          "rerank_score": -7.237764358520508,
-          "text_preview": "Section 3. Terms of employment\n(1) Every employer shall, within thirty days of the employment of a worker, provide the worker with a written contract of employment.\n(2) The contract of employment shal"
+          "chunk_id": "penal_code_1860_99a016981e43",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.2935,
+          "rerank_score": -3.6838953495025635,
+          "text_preview": "Section 6.\n 2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982\n(Ordinance No. X of 1982), Section 7.\n 3 The words \"two years\" were substituted, for the words \"five years\" by the"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.3855,
-          "rerank_score": -7.26962947845459,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "penal_code_1860_25ab0f09bb1a",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.2936,
+          "rerank_score": -6.999423503875732,
+          "text_preview": "XV of 1991), Section 7(a). 2 The words \"seven years\" were substituted, for the words \"two years\" by the Penal\nCode (Amendment) Act, 1991 (Act No. XV of 1991), Section 7(b). 1860: Act XLV] Penal Code 2"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_7c4867b40623",
-          "citation": "Sample Workers Protection Act 2024, Chapter V: WORKPLACE SAFETY, Section 12, (Cleanliness)",
-          "similarity": 0.3553,
-          "rerank_score": -7.943967819213867,
-          "text_preview": "Section 12. Cleanliness\n(1) Every establishment shall be kept clean and free from effluvia arising from any drain, privy or other nuisance.\n(2) The floors of every workroom shall be cleaned at least o"
+          "chunk_id": "penal_code_1860_4100e85e2a72",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 15, (1860: Act XLV] Penal Code 112)",
+          "similarity": 0.3099,
+          "rerank_score": -7.511308670043945,
+          "text_preview": "XLI of 1985),\nSection 17(a). 2 The words \"or to transportation\" were omitted by the Penal Code (Amendment)\nOrdinance, 1985 (Ordinance No. XLI of 1985), Section 17(b). 1860: Act XLV] Penal Code 123\n\n1["
         }
       ],
       "passed": false
@@ -364,27 +364,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_2dd6a0bac055",
-          "citation": "Sample Workers Protection Act 2024, Section preamble, (Preamble / Preliminary)",
-          "similarity": 0.6268,
-          "rerank_score": 4.143267631530762,
-          "text_preview": "Sample Workers Protection Act, 2024 ? Page 1\n\nTHE SAMPLE WORKERS PROTECTION ACT, 2024\n\nAn Act to provide for the protection of workers' rights and welfare in the People's Republic of Bangladesh.\n\nWher"
+          "chunk_id": "penal_code_1860_5ec0dce87099",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.3722,
+          "rerank_score": -4.3985395431518555,
+          "text_preview": "1 Sections 366A and 366B were inserted by the Indian Penal Code (Amendment)\nAct, 1923 (Act No. XX of 1923), Section 2. 2 Second paragraph of Section 366B was omitted by the Bangladesh Laws (Revision a"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_d4151f9cbdad",
-          "citation": "Sample Workers Protection Act 2024, Chapter I: INTRODUCTION AND DEFINITIONS, Section 1, (Short title, extent and commencement)",
-          "similarity": 0.5501,
-          "rerank_score": 0.19965089857578278,
-          "text_preview": "Section 1. Short title, extent and commencement\n(1) This Act may be called the Sample Workers Protection Act, 2024.\n(2) It extends to the whole of Bangladesh.\n(3) It shall come into force on such date"
+          "chunk_id": "tenancy_act_1950_5f2764660838",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 90, (Provided further that in making settlement of any cultivable land preference shall be given to an applicant for settlement who cultivates land by himself or by the members of his family and holds a quantity of cultivable land which, added to the quantity of cultivable land, if any, held by the other members of his family, is less than three acres.)",
+          "similarity": 0.415,
+          "rerank_score": -4.855900764465332,
+          "text_preview": "XV of 1994). 268 State Acquisition and Tenancy Act, 1950\n\n(6) The lands allotted under sub-section (5) shall be free of\n salami but shall be subject to the condition that the tenant or his\n successors"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.474,
-          "rerank_score": -8.405952453613281,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "penal_code_1860_439c3330a0b9",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.3795,
+          "rerank_score": -5.1224212646484375,
+          "text_preview": "which may extend to three years, or with fine, or with both. 1 The word \"Chittagong\" was substituted, for the word \"Lahore\" by the Bangladesh\nLaws (Revision and Declaration) Act, 1973 (Act No. VIII of"
         }
       ],
       "passed": false
@@ -399,27 +399,27 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_2dd6a0bac055",
-          "citation": "Sample Workers Protection Act 2024, Section preamble, (Preamble / Preliminary)",
-          "similarity": 0.4235,
-          "rerank_score": -2.1296753883361816,
-          "text_preview": "Sample Workers Protection Act, 2024 ? Page 1\n\nTHE SAMPLE WORKERS PROTECTION ACT, 2024\n\nAn Act to provide for the protection of workers' rights and welfare in the People's Republic of Bangladesh.\n\nWher"
+          "chunk_id": "penal_code_1860_8d2f7e98fdae",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.2766,
+          "rerank_score": -4.763205051422119,
+          "text_preview": "Every man who by deceit causes any woman who is Cohabitation\n caused by anot lawfully married to him to believe that she is lawfully man deceitfully married to him and to cohabit or have sexual interc"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.4204,
-          "rerank_score": -4.468313217163086,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "penal_code_1860_6922d143beb1",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.264,
+          "rerank_score": -5.362054347991943,
+          "text_preview": "to seven years, and shall also be liable to fine. Adultery. 497. Whoever has sexual intercourse with a person who is\n\n1860: Act XLV] Penal Code 212\n\nand whom he knows or has reason to believe to be th"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_d4151f9cbdad",
-          "citation": "Sample Workers Protection Act 2024, Chapter I: INTRODUCTION AND DEFINITIONS, Section 1, (Short title, extent and commencement)",
-          "similarity": 0.3285,
-          "rerank_score": -6.776791572570801,
-          "text_preview": "Section 1. Short title, extent and commencement\n(1) This Act may be called the Sample Workers Protection Act, 2024.\n(2) It extends to the whole of Bangladesh.\n(3) It shall come into force on such date"
+          "chunk_id": "penal_code_1860_c098bb67e23e",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.2682,
+          "rerank_score": -6.359720230102539,
+          "text_preview": "1 Section 505A was inserted by the Penal Code (Amendment) Act, 1991 (Act No. XV of 1991), Section 8. 2 The words \"imprisonment for life\" were substituted, for the word \"transportation\" by the Penal Co"
         }
       ],
       "passed": false
@@ -434,30 +434,30 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.6634,
-          "rerank_score": 6.337599754333496,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "penal_code_1860_a80074a46dcf",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 15, (1860: Act XLV] Penal Code 112)",
+          "similarity": 0.221,
+          "rerank_score": -10.749552726745605,
+          "text_preview": "278. However voluntarily vitiates the atmosphere in any Making\n atmosphereplace so as to make it noxious to the health of persons in general noxious to dwelling or carrying on business in the neighbor"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_348c0151a2cc",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 3, (Terms of employment)",
-          "similarity": 0.2775,
-          "rerank_score": -9.772201538085938,
-          "text_preview": "Section 3. Terms of employment\n(1) Every employer shall, within thirty days of the employment of a worker, provide the worker with a written contract of employment.\n(2) The contract of employment shal"
+          "chunk_id": "penal_code_1860_a9ac360efd6f",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 6, (2 Section 338A was inserted by the Penal Code (Amendment) Ordinance, 1982)",
+          "similarity": 0.2115,
+          "rerank_score": -10.829511642456055,
+          "text_preview": "extend to one month or with fine which may extend to two hundred taka, or with both. 1 The words \"three years\" were substituted, for the words \"two years\" by the Penal\nCode (Amendment) Ordinance, 1982"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_7c4867b40623",
-          "citation": "Sample Workers Protection Act 2024, Chapter V: WORKPLACE SAFETY, Section 12, (Cleanliness)",
-          "similarity": 0.2366,
-          "rerank_score": -10.54859447479248,
-          "text_preview": "Section 12. Cleanliness\n(1) Every establishment shall be kept clean and free from effluvia arising from any drain, privy or other nuisance.\n(2) The floors of every workroom shall be cleaned at least o"
+          "chunk_id": "penal_code_1860_01ef3537c2d5",
+          "citation": "The Penal Code 1860, Chapter XVII: years or upwards; 1[* * *]after previous conviction. (b) [Omitted by the Bangladesh Laws (Revision and, Section 15, (1860: Act XLV] Penal Code 112)",
+          "similarity": 0.1979,
+          "rerank_score": -10.843766212463379,
+          "text_preview": "which may extend to three years, and shall also be liable to fine;\n\n1 The word \"imprisonment\" was substituted, for the word \"transportation\" by the\nPenal Code (Amendment) Ordinance, 1985 (Ordinance No"
         }
       ],
-      "passed": true
+      "passed": false
     },
     {
       "query_index": 14,
@@ -469,30 +469,30 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.4728,
-          "rerank_score": -0.8423855900764465,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "tenancy_act_1950_631b4093f70a",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.3115,
+          "rerank_score": -7.337394714355469,
+          "text_preview": "Provided that if a rent-receiver applied for scaling down his\n debts under CHAPTER X of this Act, only half of the total amount\n of compensation payable to him under a Compensation\n Assessment-roll, l"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_348c0151a2cc",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 3, (Terms of employment)",
-          "similarity": 0.5001,
-          "rerank_score": -1.8942530155181885,
-          "text_preview": "Section 3. Terms of employment\n(1) Every employer shall, within thirty days of the employment of a worker, provide the worker with a written contract of employment.\n(2) The contract of employment shal"
+          "chunk_id": "tenancy_act_1950_367495498ea3",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.3138,
+          "rerank_score": -7.788670063018799,
+          "text_preview": "244 State Acquisition and Tenancy Act, 1950\n\n(3) In all cases of moneys, bonds and other securities\n deposited to which this section applies, the Collector of the\n district shall order the costs of th"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_4db0510ce2a7",
-          "citation": "Sample Workers Protection Act 2024, Chapter I: INTRODUCTION AND DEFINITIONS, Section 2, (Definitions)",
-          "similarity": 0.5225,
-          "rerank_score": -3.42051362991333,
-          "text_preview": "Section 2. Definitions\nIn this Act, unless there is anything repugnant in the subject or context,\n\n(b) \"employer\" means any person who employs, whether directly or through another person, or whether o"
+          "chunk_id": "tenancy_act_1950_cb85487bfac3",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.3276,
+          "rerank_score": -7.942338466644287,
+          "text_preview": "(4) Notwithstanding anything contained in sub-sections (2)\n and (3), an annuity referred to in clause (3) of Section 37 or sub-\n section (1a) of Section 39 shall be paid to the Commissioner of\n Wakfs "
         }
       ],
-      "passed": true
+      "passed": false
     },
     {
       "query_index": 15,
@@ -504,30 +504,30 @@
       "top_results": [
         {
           "rank": 1,
-          "chunk_id": "sample_workers_2024_348c0151a2cc",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 3, (Terms of employment)",
-          "similarity": 0.3438,
-          "rerank_score": -7.977676868438721,
-          "text_preview": "Section 3. Terms of employment\n(1) Every employer shall, within thirty days of the employment of a worker, provide the worker with a written contract of employment.\n(2) The contract of employment shal"
+          "chunk_id": "tenancy_act_1950_c9191ed577ae",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.33,
+          "rerank_score": -4.8198466300964355,
+          "text_preview": "(3) When any amount is deducted under sub-section (2)\nfrom the amount of any compensation payable to a rent-receiver under a Compensation Assessment-roll for the acquisition of his rent-receiving inte"
         },
         {
           "rank": 2,
-          "chunk_id": "sample_workers_2024_40f5cd25bc5e",
-          "citation": "Sample Workers Protection Act 2024, Chapter II: EMPLOYMENT CONDITIONS, Section 4, (Maximum working hours)",
-          "similarity": 0.394,
-          "rerank_score": -8.22033405303955,
-          "text_preview": "Section 4. Maximum working hours\n(1) No worker shall be required or allowed to work in an establishment for more than eight hours in any day.\n(2) No worker shall be required or allowed to work for mor"
+          "chunk_id": "tenancy_act_1950_631b4093f70a",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.2952,
+          "rerank_score": -8.386383056640625,
+          "text_preview": "Provided that if a rent-receiver applied for scaling down his\n debts under CHAPTER X of this Act, only half of the total amount\n of compensation payable to him under a Compensation\n Assessment-roll, l"
         },
         {
           "rank": 3,
-          "chunk_id": "sample_workers_2024_4db0510ce2a7",
-          "citation": "Sample Workers Protection Act 2024, Chapter I: INTRODUCTION AND DEFINITIONS, Section 2, (Definitions)",
-          "similarity": 0.4518,
-          "rerank_score": -8.395220756530762,
-          "text_preview": "Section 2. Definitions\nIn this Act, unless there is anything repugnant in the subject or context,\n\n(b) \"employer\" means any person who employs, whether directly or through another person, or whether o"
+          "chunk_id": "tenancy_act_1950_fdd2c6c35eaf",
+          "citation": "State Acquisition and Tenancy Act 1950, Chapter V: A temporarily settled private estate, the malikana payable to such, Section 48, (The decision of the Special Judge on such an appeal shall, notwithstanding anything contained in Section 52, be final.)",
+          "similarity": 0.3344,
+          "rerank_score": -8.443282127380371,
+          "text_preview": "(2) When a rent-receiver holds rent-receiving interests in\n different areas, the Revenue-officer shall, before making\n payment under Section 58 of the compensation payable to him\n under a Compensation"
         }
       ],
-      "passed": true
+      "passed": false
     }
   ]
 }

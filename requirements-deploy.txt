@@ -1,18 +1,14 @@
-# Deployment requirements WITHOUT torch/sentence-transformers.
-# Use where memory is capped (Render free tier = 512MB, Streamlit Cloud ~1GB).
-# Set USE_RERANKER=false alongside this — retrieval falls back to pure vector
-# similarity, which costs some precision but removes ~1GB of dependencies.
+# AinSeba — deployment requirements for memory-capped hosts (Render free tier).
+#
+# Excludes torch / transformers / sentence-transformers. Those are only reachable
+# through CrossEncoderReranker, which imports sentence_transformers lazily inside
+# its constructor — so with USE_RERANKER=false nothing in the import chain needs
+# them, and the app fits in 512MB.
+#
+# Also excludes PyMuPDF, pandas, and streamlit: ingestion and the Streamlit UI
+# are not used by app.py.
 
-PyMuPDF==1.24.14
-tiktoken==0.7.0
-regex==2024.9.11
-langdetect==1.0.9
-pandas==2.2.3
-python-dotenv==1.0.1
-tqdm==4.66.5
-rich==13.9.4
-click==8.1.7
-
+gradio==6.20.0
 openai==1.58.1
 chromadb==0.5.23
 
@@ -20,9 +16,8 @@ langchain==0.3.13
 langchain-openai==0.2.14
 langchain-core==0.3.28
 
-fastapi==0.115.6
-uvicorn[standard]==0.34.0
-httpx==0.28.1
-
-streamlit==1.41.1
-requests==2.32.3
+pydantic>=2.9,<3
+python-dotenv==1.0.1
+langdetect==1.0.9
+tiktoken==0.7.0
+regex>=2024.9.11
