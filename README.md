@@ -8,10 +8,12 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![LangChain](https://img.shields.io/badge/LangChain-0.3-1C3C3C)](https://www.langchain.com/)
 [![ChromaDB](https://img.shields.io/badge/ChromaDB-0.5-FF6B6B)](https://www.trychroma.com/)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.41-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Gradio](https://img.shields.io/badge/Gradio-5-F97316?logo=gradio&logoColor=white)](https://www.gradio.app/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[Live Demo](#) · [API Docs](#api-reference) · [Engineering Notes](#engineering-notes)
+**[▶ Live Demo](https://ain-seba.onrender.com)** · [API Docs](#api-reference) · [Engineering Notes](#engineering-notes)
+
+<sub>Free tier — the first request after an idle period takes 30–60s to wake the container.</sub>
 
 </div>
 
@@ -22,7 +24,7 @@
 Every answer cites its sources. When the corpus does not cover a question, the system says so rather than guessing.
 
 <p align="center">
-  <img src="docs/images/chat-english.png" alt="AinSeba answering a question about theft penalties with Penal Code citations" width="850">
+  <img src="docs/screenshots/01-hero-english.png" alt="AinSeba answering a Bangladesh Labour Act question with section-level citations" width="850">
 </p>
 
 ---
@@ -35,6 +37,7 @@ Every answer cites its sources. When the corpus does not cover a question, the s
 - [Legal corpus](#legal-corpus)
 - [Engineering notes](#engineering-notes)
 - [Quickstart](#quickstart)
+- [Deployment](#deployment)
 - [API reference](#api-reference)
 - [Project structure](#project-structure)
 - [Evaluation](#evaluation)
@@ -53,58 +56,78 @@ Every answer cites its sources. When the corpus does not cover a question, the s
 
 **History-aware retrieval.** Follow-ups like *"what section covers that?"* carry no searchable subject on their own. Short or anaphoric questions are condensed into standalone queries against the conversation history before retrieval, which is what makes multi-turn conversation work at all.
 
+**Scoped search.** Answers can be constrained to a single act or a legal category before retrieval runs, using ChromaDB metadata filters rather than post-hoc filtering — useful when a question uses vocabulary that appears across several statutes.
+
 **Honest refusals.** Five acts in the registry have no source PDF. Asked about consumer rights or the Cyber Security Act, the system refuses instead of stretching an unrelated statute to fit.
 
 ---
 
 ## Screenshots
 
-<table>
-<tr>
-<td width="50%"><img src="docs/images/chat-bangla.png" alt="Bangla question answered in Bangla with English section citations"><br><em>Bangla in, Bangla out — citations stay in English</em></td>
-<td width="50%"><img src="docs/images/sources-panel.png" alt="Expanded sources panel showing citations with similarity and rerank scores"><br><em>Every answer is auditable: act, chapter, section, and both scores</em></td>
-</tr>
-<tr>
-<td><img src="docs/images/followup.png" alt="Follow-up question resolved against conversation history"><br><em>Follow-ups resolve against history</em></td>
-<td><img src="docs/images/api-docs.png" alt="FastAPI interactive OpenAPI documentation"><br><em>Auto-generated OpenAPI docs</em></td>
-</tr>
-</table>
+Captured against the live deployment.
+
+![AinSeba answering a Labour Act question in English, with the sources panel listing each cited section](docs/screenshots/01-hero-english.png)
+
+### Bangla in, Bangla out
+
+The same question asked in Bangla is answered in Bangla, while citations stay in English so the section numbers remain verifiable against the official portal.
+
+![A Bangla-language question answered in Bangla with English section citations](docs/screenshots/02-bangla-answer.png)
+
+### Auditable citations
+
+Every retrieved passage is shown with its act, chapter, and section, alongside the similarity score that surfaced it. A user can check the reasoning rather than trusting it.
+
+![Sources panel showing act, chapter, section and similarity score for each retrieved passage](docs/screenshots/03-citations.png)
+
+### Follow-ups resolve against history
+
+A follow-up carrying no subject of its own is condensed into a standalone query before retrieval, so the second turn still lands on the right section.
+
+![A follow-up question answered correctly using context from the previous turn](docs/screenshots/04-followup-context.png)
 
 ---
 
 ## Architecture
 
+Two entry points share one chain. The deployed demo runs Gradio in a single process and calls the chain in-process; local development runs Streamlit against the FastAPI service, which adds rate limiting, server-side sessions, and streaming.
+
 ```
-                        ┌──────────────────────────┐
-   Question             │  Streamlit  (port 8501)  │
-   EN / BN / Banglish   │  chat · filters · sources│
-                        └────────────┬─────────────┘
-                                     │  SSE  /api/query/stream
-                        ┌────────────▼─────────────┐
-                        │  FastAPI    (port 8000)  │
-                        │  rate limit · sessions   │
-                        └────────────┬─────────────┘
-                                     │
-                   ┌─────────────────▼──────────────────┐
-                   │        BilingualRAGChain           │
-                   │  detect → translate → answer → BN  │
-                   └─────────────────┬──────────────────┘
-                                     │
-                   ┌─────────────────▼──────────────────┐
-                   │          LegalRAGChain             │
-                   │  condense follow-up → retrieve →   │
-                   │  prompt → GPT-4o-mini → cite       │
-                   └─────────────────┬──────────────────┘
-                                     │
-              ┌──────────────────────▼───────────────────────┐
-              │              LegalRetriever                  │
-              │  ChromaDB top-20  →  cross-encoder top-5     │
-              └──────────────────────┬───────────────────────┘
-                                     │
-              ┌──────────────────────▼───────────────────────┐
-              │   ChromaDB · 1,155 passages · 1536-dim       │
-              │   metadata: act · chapter · section · year   │
-              └─────────────────────────────────────────────┘
+                    Question — EN / BN / Banglish
+                                 │
+                 ┌───────────────┴────────────────┐
+                 │                                │
+   ┌─────────────▼──────────────┐   ┌─────────────▼──────────────┐
+   │  Gradio       (port 7860)  │   │  Streamlit    (port 8501)  │
+   │  single process, deployed  │   │  chat · filters · sources  │
+   │  calls the chain directly  │   └─────────────┬──────────────┘
+   └─────────────┬──────────────┘                 │ SSE
+                 │                   ┌────────────▼──────────────┐
+                 │                   │  FastAPI      (port 8000) │
+                 │                   │  rate limit · sessions    │
+                 │                   └────────────┬──────────────┘
+                 └───────────────┬────────────────┘
+                                 │
+                 ┌───────────────▼────────────────┐
+                 │        BilingualRAGChain       │
+                 │  detect → translate → answer   │
+                 └───────────────┬────────────────┘
+                                 │
+                 ┌───────────────▼────────────────┐
+                 │          LegalRAGChain         │
+                 │  condense follow-up → retrieve │
+                 │  → prompt → GPT-4o-mini → cite │
+                 └───────────────┬────────────────┘
+                                 │
+                 ┌───────────────▼────────────────┐
+                 │          LegalRetriever        │
+                 │  ChromaDB top-20 → rerank top-5│
+                 └───────────────┬────────────────┘
+                                 │
+             ┌───────────────────▼────────────────────┐
+             │   ChromaDB · 1,155 passages · 1536-dim │
+             │   metadata: act · chapter · section    │
+             └────────────────────────────────────────┘
 ```
 
 **Ingestion pipeline** (offline, run once per corpus change):
@@ -125,7 +148,8 @@ PDF → PyMuPDF extract → clean → strip contents pages
 | Reranker | `ms-marco-MiniLM-L-6-v2` | runs on CPU, no API cost |
 | Vector store | ChromaDB | metadata filtering, embeds in-process |
 | API | FastAPI + Pydantic | typed schemas, free OpenAPI docs |
-| UI | Streamlit | fastest path to a demoable chat surface |
+| UI (deployed) | Gradio | one process, fits a 512 MB container |
+| UI (local) | Streamlit | richer dev surface over the HTTP API |
 | PDF | PyMuPDF | fastest reliable text extraction |
 
 ---
@@ -146,6 +170,8 @@ Sourced from [bdlaws.minlaw.gov.bd](http://bdlaws.minlaw.gov.bd/), the official 
 Mean chunk size ~215 tokens; no chunk exceeds the 8,191-token embedding ceiling. Full indexing costs about **$0.005**.
 
 Five further acts sit in the registry awaiting source PDFs — Consumer Rights Protection 2009, Cyber Security 2023, Rent Control 1991, Companies Act 1994, and the Constitution. The system refuses questions in those areas rather than answering from adjacent law.
+
+> **Note on scope.** The State Acquisition and Tenancy Act 1950 governs land acquisition and agricultural tenancy, not residential rent. Rent-increase and landlord-tenant questions fall under the Premises Rent Control Act 1991, which is not yet indexed and is refused.
 
 ---
 
@@ -200,10 +226,10 @@ Paragraph-level splitting never subdivided a paragraph that alone exceeded the b
 
 ```bash
 git clone https://github.com/mh-hamim/Ain-Seba.git
-cd ainseba
+cd Ain-Seba
 
 python -m venv venv
-source venv/bin/activate          # Windows: .\venv\Scripts\activate
+source venv/bin/activate          # Windows: .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 
 cp .env.example .env              # then add your OPENAI_API_KEY
@@ -211,22 +237,30 @@ cp .env.example .env              # then add your OPENAI_API_KEY
 
 ### Build the index
 
-Place the source PDFs in `data/raw/`, then:
+The repository ships with a prebuilt ChromaDB index, so this is only needed if you change the corpus. Place the source PDFs in `data/raw/`, then:
 
 ```bash
 python scripts/run_pipeline.py --all          # extract → clean → chunk
 python -m src.vectorstore.populate --all      # embed → ChromaDB
-python -m src.vectorstore.populate --stats    # expect ~1,155 documents
+python -m src.vectorstore.populate --stats    # verify document count
 ```
 
 ### Run
+
+**Single process (what the live demo runs):**
+
+```bash
+python app.py                                 # → http://localhost:7860
+```
+
+**API + Streamlit (local development):**
 
 ```bash
 uvicorn src.api.app:app --port 8000           # wait for "Warm-up complete"
 streamlit run frontend/app.py                 # second terminal → :8501
 ```
 
-The API warms the chain at startup, so give it ~40 seconds on first boot while the cross-encoder loads. Point the UI at a remote backend with `AINSEBA_API_URL`.
+Either way, give it ~40 seconds on first boot while the cross-encoder loads. Point the Streamlit UI at a remote backend with `AINSEBA_API_URL`.
 
 ### Configuration
 
@@ -240,7 +274,21 @@ The API warms the chain at startup, so give it ~40 seconds on first boot while t
 | `RERANK_TOP_N` | `5` | passages sent to the LLM |
 | `API_RATE_LIMIT` | `30` | requests per window, per IP |
 | `CORS_ORIGINS` | `*` | comma-separated in production |
-| `AINSEBA_API_URL` | `http://localhost:8000` | read by the frontend |
+| `AINSEBA_API_URL` | `http://localhost:8000` | read by the Streamlit frontend |
+
+---
+
+## Deployment
+
+The live demo runs on Render's free tier as a single Gradio process. `app.py` at the repository root imports the chain directly rather than crossing an HTTP boundary, which keeps the entire application inside one 512 MB container.
+
+Two consequences are worth stating plainly.
+
+**The ChromaDB index is committed to the repository.** Re-embedding at build time would require an API key in the build environment and would spend money on every deploy. At 1,155 vectors the index is small enough to version, so the container starts with the corpus already in place.
+
+**The reranker is disabled in production** (`USE_RERANKER=false`). The cross-encoder, the embedding client, and Chroma together do not fit in 512 MB. Retrieval on the live demo is therefore dense-only top-k, and answers are looser than a local run with reranking enabled — the screenshots above were taken against the deployed configuration rather than a tuned local one.
+
+The free tier also spins down when idle, so the first request after a quiet period takes 30–60 seconds to wake.
 
 ---
 
@@ -288,7 +336,8 @@ curl -X POST http://localhost:8000/api/query \
 ## Project structure
 
 ```
-ainseba/
+Ain-Seba/
+├── app.py                        # Gradio UI — single-process entry point
 ├── src/
 │   ├── config.py                 # central config, law registry
 │   ├── vectorstore/              # embeddings, ChromaDB, populate CLI
@@ -304,8 +353,9 @@ ainseba/
 ├── frontend/app.py               # Streamlit chat UI
 ├── evaluation/                   # retrieval + answer metrics
 ├── tests/                        # pytest suite
+├── chroma_db/                    # prebuilt vector index (committed)
 ├── data/{raw,processed}/
-└── docs/images/
+└── docs/screenshots/
 ```
 
 ---
@@ -330,6 +380,7 @@ Retrieval is spot-checked against a fixed question set covering all five acts, i
 - **Not legal advice.** Educational information only. Consult a qualified lawyer for any actual matter.
 - **Static snapshot.** The corpus reflects the law as printed in the source PDFs. It does not track subsequent amendments, repeals, or provisions read down or struck by the courts. Verify against bdlaws before acting.
 - **Five acts unindexed.** Consumer rights, cyber security, rent control, company law, and constitutional questions are out of scope and are refused.
+- **The hosted demo runs without reranking.** Memory limits on the free tier force dense-only retrieval, which is weaker than the local default.
 - **Marginal-note artefacts.** Penal Code and Tenancy Act passages carry title fragments spliced mid-sentence by PDF extraction. Retrieval and generation handle this, but raw source snippets read slightly mangled. Fixing it properly needs column-aware extraction.
 - **English-only case law.** No judicial interpretation, only statutory text.
 - **In-memory sessions.** Conversation state does not survive a backend restart.
